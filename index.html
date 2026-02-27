@@ -1,28 +1,38 @@
-<script>
-  // JS tương tác rõ ràng cho js.org
-  document.addEventListener('DOMContentLoaded', () => {
-    // Alert chào mừng
-    alert('Chào mừng đến trang lớp 9A7 K57 - Powered by JavaScript trên GitHub Pages! 🌟');
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lớp 9A7 K57 - THCS Đồng La</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f0f8ff; padding: 20px; }
+    h1 { color: #2c3e50; }
+    img { max-width: 80%; margin: 10px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Chào mừng đến Trang Lớp 9A7 K57!</h1>
+  <p>Đây là trang web giới thiệu lớp 9A7 K57, THCS Đồng La, Hà Nội. Chúng em chia sẻ ảnh hoạt động lớp, lịch học và một số tương tác vui bằng JavaScript.</p>
+  <p>Click nút dưới để thay đổi màu nền ngẫu nhiên (Powered by JS)!</p>
 
-    // Thay đổi tiêu đề khi click
-    const title = document.querySelector('h1');
-    if (title) {
-      title.addEventListener('click', () => {
-        title.textContent = title.textContent === 'Xin chào từ GitHub Pages!' 
-          ? 'Bạn vừa click bằng JS nè! 😎' 
-          : 'Xin chào từ GitHub Pages!';
-      });
+  <button onclick="changeColor()">Thay đổi màu nền</button>
+
+  <h2>Ảnh lớp chúng em</h2>
+  <img src="images/anh-lop.jpg" alt="Ảnh tập thể lớp 9A7 K57">
+  <img src="images/anh-hoat-dong.jpg" alt="Hoạt động ngoại khóa lớp">
+
+  <script>
+    function changeColor() {
+      const colors = ['#ffdddd', '#ddffdd', '#ddddff', '#ffffdd', '#ffddff'];
+      document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+      alert('Màu nền đã thay đổi! Cảm ơn bạn đã tương tác với JS của lớp 9A7 K57 😄');
     }
 
-    // Slideshow ảnh đơn giản (nếu có nhiều ảnh)
-    const images = document.querySelectorAll('img');
-    let current = 0;
-    setInterval(() => {
-      if (images.length > 1) {
-        images[current].style.opacity = 0.5;
-        current = (current + 1) % images.length;
-        images[current].style.opacity = 1;
-      }
-    }, 3000);
-  });
-</script>
+    // Alert tự động khi load trang
+    window.onload = function() {
+      alert('Chào mừng đến trang lớp 9A7 K57! Trang này dùng JavaScript để tương tác.');
+    };
+  </script>
+</body>
+</html>
